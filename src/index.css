@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+@font-face { font-family: "Arimo:Bold"; src: url("https://static.figma.com/font/Arimo_wght__1") format("woff2"); font-style: normal; font-weight: 700; }
+@font-face { font-family: "Arimo:Italic"; src: url("https://static.figma.com/font/Arimo-Italic_wght__1") format("woff2"); font-style: italic; font-weight: 400; }
+@font-face { font-family: "Arimo:Regular"; src: url("https://static.figma.com/font/Arimo_wght__1") format("woff2"); font-style: normal; font-weight: 400; }
+@font-face { font-family: "Cormorant Garamond:Italic"; src: url("https://static.figma.com/font/CormorantGaramond-Italic_wght__1") format("woff2"); font-style: italic; font-weight: 400; }
+@font-face { font-family: "Cormorant Garamond:Regular"; src: url("https://static.figma.com/font/CormorantGaramond_wght__1") format("woff2"); font-style: normal; font-weight: 400; }
+@font-face { font-family: "Cormorant Garamond:SemiBold"; src: url("https://static.figma.com/font/CormorantGaramond_wght__1") format("woff2"); font-style: normal; font-weight: 600; }
+@font-face { font-family: "Inter:Regular"; src: url("https://static.figma.com/font/Inter_1") format("woff2"); font-style: normal; font-weight: 400; }
+@font-face { font-family: "Tinos:Bold"; src: url("https://static.figma.com/font/Tinos-Bold_2") format("woff2"); font-style: normal; font-weight: 700; }
+@font-face { font-family: "Tinos:Regular"; src: url("https://static.figma.com/font/Tinos-Regular_1") format("woff2"); font-style: normal; font-weight: 400; }
+
+:root {
+  color: #650d22;
+  background: #ece3d7;
+  font-family: "Arimo:Regular", Arial, sans-serif;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+main { position: relative; isolation: isolate; }
+.hero-parallax { position: relative; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.hero {
+  position: sticky;
+  z-index: 0;
+  top: 0;
+  height: 817px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #e9e0d2, #f2eee7 50%, #e9dfd1);
+}
+.hero__paper { position: absolute; inset: 0; background: url("/assets/eb4e0.png") center/cover; opacity: .4; }
+.header {
+  position: relative; z-index: 2; height: 103px; padding: 9px 3.4% 0 2.9%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.header > a { padding: 18px 0; font-size: 20px; color: #57181f; transition: opacity .2s; }
+.header > a:hover { opacity: .65; }
+.brand { display: flex; align-items: center; gap: 17px; }
+.brand__seal { width: 68px; height: 68px; object-fit: cover; }
+.brand__wordmark { width: 300px; font-family: "Tinos:Bold", serif; color: #650d22; }
+.brand__wordmark > strong { display: block; font-size: 20px; line-height: 1.1; }
+.brand__designation { display: flex; align-items: center; gap: 7px; width: 236px; margin-top: 2px; }
+.brand__designation span { height: 1px; flex: 1; background: currentColor; }
+.brand__designation b { font-size: 16px; }
+.hero__composition { position: relative; z-index: 1; height: 672px; max-width: 1600px; margin: 0 auto; }
+.hero h1 {
+  position: absolute; z-index: 2; top: -11px; left: 27.6%; margin: 0;
+  font: 400 174px/1 "Cormorant Garamond:Regular", serif; letter-spacing: -6px;
+}
+.hero__portrait { position: absolute; left: 29%; top: 193px; width: 42.1%; height: 290px; overflow: hidden; }
+.hero__portrait img { width: 100%; height: 775px; object-fit: cover; object-position: center 21%; transform: translateY(-21.38%); }
+.hero__tagline {
+  position: absolute; z-index: 2; top: 475px; left: 22.3%; white-space: nowrap;
+  font: 400 174px/1 "Cormorant Garamond:Regular", serif; letter-spacing: -5px;
+}
+.hero__tagline em { color: #d8b77c; font-family: "Cormorant Garamond:Italic", serif; font-size: 181px; letter-spacing: -6px; }
+.hero__practice-nav { position: absolute; z-index: 2; bottom: 14px; left: 0; width: 100%; height: 28px; display: flex; align-items: center; }
+.hero__practice-nav a {
+  flex: 1; min-width: 0; text-align: center; padding: 7px 12px;
+  border-right: 1px solid #9a713f; color: #8c8780;
+  font: 400 11.5px/1 "Inter:Regular", sans-serif; letter-spacing: 2px; text-transform: uppercase;
+}
+.hero__practice-nav a:last-child { border-right: 0; }
+
+.section-label { display: flex; align-items: center; gap: 24px; color: #650d22; font-size: 16px; letter-spacing: 3.5px; }
+.section-label--light { color: #d8b77c; }
+.section-label__rule { width: 98px; height: 1px; background: #967c66; }
+.about { position: relative; z-index: 1; min-height: 1316px; overflow: hidden; background: #57181f; color: #f5f0e9; }
+.about__inner { display: grid; grid-template-columns: minmax(0, 1fr) 430px; max-width: 1390px; min-height: 1220px; margin: 0 auto; padding-top: 145px; }
+.about__main { position: relative; padding-right: 90px; border-right: 3px solid #967c66; }
+.about h2 { margin: 15px 0 17px; font: 400 77px/1.08 "Cormorant Garamond:Regular", serif; letter-spacing: -1.6px; }
+.about h2 em { font-family: "Cormorant Garamond:Italic", serif; }
+.about__main > p { max-width: 750px; margin: 0; color: #cdbdb9; font-size: 25.5px; line-height: 1.47; }
+.outline-button { width: 480px; height: 71px; margin-top: 27px; padding: 0 35px 0 41px; border: 1.5px solid #967c66; display: flex; align-items: center; justify-content: space-between; color: #d8b77c; font-size: 19.5px; letter-spacing: 3.5px; transition: background .2s; }
+.outline-button:hover { background: rgb(216 183 124 / .08); }
+.outline-button img { width: 26px; height: 20px; }
+.about__office { position: absolute; top: 579px; left: 0; width: 588px; height: 394px; object-fit: cover; }
+.recognitions { display: flex; flex-direction: column; align-items: center; gap: 82px; padding: 17px 0 0 75px; color: #f5f0e9; }
+.certification { width: 307px; display: flex; gap: 18px; align-items: flex-start; }
+.certification img { width: 68px; height: 78px; }
+.certification div { display: flex; flex-direction: column; gap: 3px; font-size: 20px; font-weight: 400; line-height: 1.26; }
+.certification strong { font-weight: 400; }
+.certification span, .recognition span, .recognition small, .rating span { color: #cdbdb9; }
+.certification span { font-size: 18.5px; }
+.recognition { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.recognition--lawyers { gap: 12px; }
+.recognition--lawyers > strong { color: #d8b77c; font: 400 44px/1 "Tinos:Regular", serif; letter-spacing: -2px; }
+.recognition span { font-size: 20px; }
+.recognition small { font-size: 17px; }
+.recognition .profile { font: 700 26px/1.4 "Arimo:Bold", sans-serif; }
+.rating { display: flex; align-items: center; gap: 19px; width: 277px; }
+.rating__medallion { position: relative; width: 83px; height: 83px; flex: none; display: grid; place-items: center; }
+.rating__medallion img { position: absolute; inset: 0; width: 83px; height: 83px; }
+.rating__medallion strong { z-index: 1; color: #650d22; font-size: 44px; font-weight: 400; }
+.rating > div:last-child { display: flex; flex-direction: column; gap: 4px; font-size: 19px; }
+.academy { display: flex; flex-direction: column; align-items: center; }
+.academy > div { display: flex; align-items: center; gap: 2px; }
+.academy > div strong { font-size: 49px; font-weight: 400; }
+.academy img { width: 25px; height: 34px; }
+.academy b { font: 700 12.6px/1.1 "Arimo:Bold"; text-align: center; }
+.academy span { color: #cdbdb9; font-size: 22px; }
+
+.practice { background: #ece3d7; }
+.practice__inner { max-width: 1390px; margin: 0 auto; padding: 47px 0 0; }
+.practice h2 { margin: 18px 0 0; font: 400 65px/79px "Cormorant Garamond:Regular", serif; }
+.practice__intro { margin: 0; max-width: 1300px; color: #8c8780; font-size: 25px; line-height: 33px; }
+.services { padding-top: 22px; }
+.service {
+  min-height: 151px; display: grid; grid-template-columns: 442px 2px minmax(0, 1fr) 34px;
+  align-items: center; gap: 32px; border-bottom: 1px solid #dfd5cb;
+}
+.service:last-child { border: 0; }
+.service h3 { margin: 0; font: 400 40px/1.15 "Cormorant Garamond:Regular", serif; }
+.service__rule { width: 2px; height: 52px; background: #dfd5cb; }
+.service p { color: #8c8780; font-size: 28px; line-height: 1.1; }
+.service > img { width: 34px; height: 18px; transition: transform .2s; }
+.service:hover > img { transform: translateX(5px); }
+
+.approach { min-height: 756px; padding: 98px max(5.5vw, 24px) 79px; display: grid; grid-template-columns: 453px minmax(0, 1fr); gap: 77px; background: #ece3d7; }
+.approach__portrait { width: 453px; height: 563px; object-fit: cover; }
+.approach__quote { position: relative; border-top: 1px solid #967c66; padding: 152px 0 0 43px; color: #8c8780; }
+.approach__mark { position: absolute; top: 39px; left: 5px; color: #650d22; font: 400 170px/1 "Cormorant Garamond:Regular"; }
+.approach blockquote { max-width: 840px; margin: 0; font: 400 50px/56px "Cormorant Garamond:Regular", serif; letter-spacing: -.15px; }
+.attribution { display: flex; align-items: center; gap: 27px; margin-top: 34px; }
+.attribution > span { width: 79px; height: 1px; background: #967c66; }
+.attribution div { display: flex; flex-direction: column; gap: 7px; }
+.attribution strong { font: 600 19px/1 "Cormorant Garamond:SemiBold"; letter-spacing: 2.8px; }
+.attribution small { font: 700 13px/1 "Arimo:Bold"; letter-spacing: 3.8px; color: #8c8780; }
+
+.contact { min-height: 1065px; background: #57181f; color: #f5f0e9; }
+.contact__inner { max-width: 1312px; min-height: 774px; margin: 0 auto; padding-top: 130px; display: grid; grid-template-columns: 628px 1px minmax(0, 1fr); gap: 50px; }
+.contact h2 { margin: 14px 0 17px 6px; font: 400 77px/80px "Cormorant Garamond:Regular", serif; letter-spacing: -1px; }
+.contact__information > p { margin: 0 0 0 6px; max-width: 610px; font-size: 24px; line-height: 31px; letter-spacing: -.45px; }
+.contact__details { display: flex; flex-direction: column; gap: 24px; margin-top: 45px; }
+.contact-detail { min-height: 39px; display: grid; grid-template-columns: 29px 1px minmax(0, 1fr); gap: 31px; align-items: center; }
+.contact-detail:first-child { height: 92px; }
+.contact-detail > img { width: 29px; max-height: 32px; }
+.contact-detail__rule { width: 1px; height: 100%; background: #967c66; }
+.contact-detail > div { display: flex; flex-direction: column; justify-content: center; gap: 3px; }
+.contact-detail strong { font: 400 25px/1 "Cormorant Garamond:Regular"; }
+.contact-detail span, .contact-detail a { font-size: 21px; line-height: 28px; color: #cdbdb9; }
+.contact__divider { width: 1px; height: 550px; background: #967c66; }
+.inquiry { padding-top: 16px; }
+.inquiry > .section-label { margin-bottom: 30px; }
+.inquiry input, .inquiry textarea { width: 100%; border: 1px solid #967c66; border-radius: 0; outline: 0; background: transparent; color: #f5f0e9; font-size: 18px; }
+.inquiry input { height: 66px; padding: 0 24px; margin-bottom: 21px; }
+.inquiry textarea { height: 134px; padding: 18px 24px; resize: none; }
+.inquiry input::placeholder, .inquiry textarea::placeholder { color: #cdbdb9; opacity: 1; }
+.inquiry input:focus, .inquiry textarea:focus { border-color: #d8b77c; }
+.inquiry__row { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 21px; }
+.textarea-wrap { position: relative; height: 134px; }
+.textarea-wrap > img { position: absolute; right: 3px; bottom: 3px; width: 10px; height: 10px; pointer-events: none; }
+.inquiry button { width: 100%; height: 63px; margin-top: 21px; border: 0; background: #f4e8d9; color: #650d22; display: flex; align-items: center; gap: 15px; padding-left: 41px; font: 700 18px/1 "Arimo:Bold"; letter-spacing: 3.1px; cursor: pointer; }
+.inquiry button:hover { background: #fff7ed; }
+.inquiry button img { width: 25px; height: 23px; }
+.inquiry__disclaimer { margin: 28px 0 0; color: #cdbdb9; font: italic 400 20px/24px "Arimo:Italic"; }
+.footer { max-width: 1522px; height: 291px; margin: 0 auto; border-top: 1px solid #967c66; }
+.footer__top { height: 195px; padding: 34px 44px 0; display: flex; align-items: flex-start; justify-content: space-between; }
+.brand--footer { width: 460px; gap: 15px; }
+.brand--footer .brand__seal { width: 90px; height: 90px; }
+.brand--footer .brand__wordmark { width: 279px; color: #f5f0e9; font-family: "Tinos:Regular"; }
+.brand--footer .brand__wordmark > strong { font-size: 26px; font-weight: 400; letter-spacing: -.4px; }
+.brand--footer .brand__designation { width: 100%; gap: 11px; }
+.brand--footer .brand__designation b { font-size: 20px; font-weight: 400; }
+.footer__credentials { display: flex; align-items: center; height: 125px; }
+.footer-cert { width: 306px; padding: 0 6px 0 56px; display: flex; align-items: center; gap: 8px; text-align: center; }
+.footer-cert > img { width: 68px; height: 78px; }
+.footer-cert > div { display: flex; flex-direction: column; align-items: center; }
+.footer-cert strong { font-size: 14px; letter-spacing: 1px; }
+.footer-cert span { font: 400 16px/1.2 "Tinos:Regular"; }
+.footer-cert small { font: 400 15px/20px "Tinos:Regular"; }
+.footer__credential-rule { width: 1px; height: 85px; background: #967c66; }
+.footer-academy { padding-left: 36px; display: flex; flex-direction: column; align-items: center; }
+.footer-academy > div { display: flex; align-items: center; gap: 2px; }
+.footer-academy strong { font: 700 38px/1 "Arimo:Bold"; }
+.footer-academy img { width: 24px; height: 28px; }
+.footer-academy b { font: 400 11px/13px "Arimo:Regular"; }
+.footer-academy span { font: 400 16px/1 "Tinos:Regular"; }
+.footer__legal { margin: 0 44px; padding-top: 19px; border-top: 1px solid #967c66; display: flex; align-items: center; justify-content: space-between; color: #cdbdb9; font-size: 15px; }
+.footer__legal > span { font-size: 17px; }
+.footer__legal > div { display: flex; align-items: center; gap: 18px; }
+.footer__legal i { width: 1px; height: 16px; background: #967c66; }
+
+@media (max-width: 1200px) {
+  .hero { height: 720px; }
+  .hero__composition { height: 590px; }
+  .hero h1 { left: 20%; font-size: 140px; }
+  .hero__portrait { top: 160px; left: 25%; width: 50%; }
+  .hero__tagline { top: 425px; left: 16%; font-size: 138px; }
+  .hero__tagline em { font-size: 144px; }
+  .about__inner, .practice__inner { margin-inline: 5vw; }
+  .about__inner { grid-template-columns: minmax(0, 1fr) 350px; }
+  .about h2, .contact h2 { font-size: 62px; line-height: 1.05; }
+  .about__main > p { font-size: 21px; }
+  .recognitions { padding-left: 35px; }
+  .service { grid-template-columns: 33% 2px minmax(0, 1fr) 34px; }
+  .service p { font-size: 22px; }
+  .approach { grid-template-columns: 36% minmax(0, 1fr); gap: 50px; }
+  .approach__portrait { width: 100%; }
+  .approach blockquote { font-size: 40px; line-height: 1.12; }
+  .contact__inner { margin-inline: 5vw; grid-template-columns: 46% 1px minmax(0, 1fr); gap: 35px; }
+  .inquiry__row { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 800px) {
+  .header { height: 86px; padding: 8px 20px 0; }
+  .brand { gap: 8px; }
+  .brand__seal { width: 48px; height: 48px; }
+  .brand__wordmark { width: 180px; }
+  .brand__wordmark > strong { font-size: 13px; }
+  .brand__designation { width: 155px; }
+  .brand__designation b { font-size: 11px; }
+  .header > a { font-size: 14px; }
+  .hero { height: 650px; }
+  .hero__composition { height: 530px; }
+  .hero h1 { top: 10px; left: 0; width: 100%; text-align: center; font-size: clamp(74px, 20vw, 120px); letter-spacing: -3px; }
+  .hero__portrait { top: 132px; left: 10%; width: 80%; height: 255px; }
+  .hero__tagline { top: 400px; left: 0; width: 100%; text-align: center; font-size: clamp(70px, 18vw, 108px); letter-spacing: -3px; }
+  .hero__tagline em { display: block; margin-top: -15px; font-size: 1.03em; letter-spacing: -3px; }
+  .hero__practice-nav { bottom: 10px; padding: 0 14px; gap: 8px; height: auto; flex-wrap: wrap; justify-content: center; }
+  .hero__practice-nav a { flex: none; padding: 3px 8px; border: 0; font-size: 8px; }
+  .about { min-height: 0; }
+  .about__inner { display: block; min-height: 0; margin: 0; padding: 70px 24px; }
+  .about__main { padding: 0; border: 0; }
+  .about h2, .contact h2 { margin-top: 14px; font-size: 48px; }
+  .about__main > p { font-size: 18px; line-height: 1.55; }
+  .outline-button { max-width: 100%; height: 62px; padding: 0 20px; font-size: 13px; letter-spacing: 2px; }
+  .about__office { position: static; width: 100%; height: auto; margin-top: 40px; }
+  .recognitions { display: grid; grid-template-columns: 1fr 1fr; gap: 50px 25px; padding: 70px 0 0; }
+  .certification, .rating { width: auto; }
+  .certification img { width: 50px; height: auto; }
+  .certification div { font-size: 15px; }
+  .certification span { font-size: 14px; }
+  .recognition--lawyers > strong { font-size: 34px; }
+  .recognition span { font-size: 16px; }
+  .recognition small { font-size: 12px; }
+  .recognition .profile { font-size: 18px; }
+  .practice__inner { margin: 0; padding: 60px 24px 30px; }
+  .practice h2 { font-size: 46px; line-height: 1.08; }
+  .practice__intro { margin-top: 15px; font-size: 18px; line-height: 1.5; }
+  .service { min-height: 0; padding: 28px 0; grid-template-columns: minmax(0, 1fr) 26px; gap: 8px 20px; }
+  .service h3 { font-size: 32px; }
+  .service__rule { display: none; }
+  .service p { grid-row: 2; font-size: 16px; line-height: 1.45; }
+  .service > img { grid-column: 2; grid-row: 1 / 3; width: 26px; }
+  .approach { padding: 45px 24px 70px; display: block; }
+  .approach__portrait { width: 100%; height: min(125vw, 563px); }
+  .approach__quote { margin-top: 45px; padding: 110px 0 0 20px; }
+  .approach__mark { top: 18px; font-size: 130px; }
+  .approach blockquote { font-size: 34px; line-height: 1.13; }
+  .attribution { gap: 15px; }
+  .attribution > span { width: 40px; }
+  .contact__inner { display: block; margin: 0; padding: 70px 24px; }
+  .contact__information > p { font-size: 18px; line-height: 1.5; }
+  .contact__divider { width: 100%; height: 1px; margin: 60px 0 45px; }
+  .contact-detail { gap: 20px; grid-template-columns: 24px 1px minmax(0, 1fr); }
+  .contact-detail > img { width: 24px; }
+  .contact-detail strong { font-size: 21px; }
+  .contact-detail span, .contact-detail a { font-size: 16px; line-height: 1.5; }
+  .inquiry__row { display: block; }
+  .inquiry__disclaimer { font-size: 15px; line-height: 1.4; }
+  .footer { height: auto; margin: 0 24px; }
+  .footer__top { height: auto; padding: 35px 0; display: block; }
+  .brand--footer { max-width: 100%; }
+  .brand--footer .brand__seal { width: 65px; height: 65px; }
+  .brand--footer .brand__wordmark { width: 210px; }
+  .brand--footer .brand__wordmark > strong { font-size: 18px; }
+  .footer__credentials { margin-top: 35px; justify-content: center; }
+  .footer-cert { width: auto; padding: 0 20px 0 0; }
+  .footer-academy { padding-left: 20px; }
+  .footer__legal { margin: 0; padding: 25px 0 35px; display: block; line-height: 1.5; }
+  .footer__legal > span { font-size: 13px; }
+  .footer__legal > div { margin-top: 16px; flex-wrap: wrap; gap: 10px; font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .header .brand__wordmark { display: none; }
+  .recognitions { grid-template-columns: 1fr; }
+  .hero__portrait { left: 5%; width: 90%; }
+  .footer__credentials { transform: scale(.82); transform-origin: left center; width: 122%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero { position: relative; }
+}
